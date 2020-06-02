@@ -31,13 +31,13 @@ for i in range(len(data['Sales'].values)):
 budget = np.array(budget).reshape(-1,1)
 sales = np.array(sales).reshape(-1,1)
 
-for i in range(len(data['Budget'].values)):
+for i in range(len(sales), len(data['Budget'].values)):
     val = str(data['Budget'].values[i])
     val = convert_to_int(val)
     res_to_predict_of_sales.append(val)
 
 # print(sales)
-res_to_predict_of_sales = np.array(res_to_predict_of_sales).reshape(-1,1)
+# res_to_predict_of_sales = np.array(res_to_predict_of_sales).reshape(-1,1)
 # print(res_to_predict_of_sales)
 
 # # Model initialization
@@ -67,12 +67,29 @@ jan_2019_sales_prediction = slope*jan_2019_budget + intercept
 feb_2019_sales_prediction = slope*feb_2019_budget + intercept
 march_2019_sales_prediction = slope*march_2019_budget + intercept
 
+def check_goal(x,y):
+    print(x,y)
+    if(x<y):
+        return 'no'
+    else: return 'yes'
+
 print()
-print("**************Predicted result of First quarter of 2019***************")
+print("**************Predicted result for First quarter of 2019***************")
+print()
+print("I am assuming if 'sale < budget' than company won't hit their goal")
+
 print()
 print("jan 2019 sale", jan_2019_sales_prediction)
+print("Will company hit their goal ?", check_goal(jan_2019_sales_prediction,jan_2019_budget))
+print()
+
 print("feb 2019 sale", feb_2019_sales_prediction)
+print("Will company hit their goal ?", check_goal(feb_2019_sales_prediction,feb_2019_budget))
+print()
+
 print("march 2019 sale", march_2019_sales_prediction)
+print("Will company hit their goal ?", check_goal(march_2019_sales_prediction,march_2019_budget))
+
 
 # plotting values
 
