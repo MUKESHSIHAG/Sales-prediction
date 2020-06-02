@@ -8,4 +8,5 @@ python3 predict.py</br>
 
 <h5>This is the output after runnig the code on given data in *input.csv* file </h5></br> 
 
-![pre](https://user-images.githubusercontent.com/33174056/83556528-b232b380-a52d-11ea-814a-e8876b706bed.jpg)
+![pre](https://user-images.githubusercontent.com/33174056/83557154-c62ae500-a52e-11ea-9772-afe1c11c764d.jpg)
+
